@@ -14,7 +14,7 @@ EDBot will post a random image of an Enchanted Doll twice daily to twitter accou
 tweet $(echo "usb/Galleries/$(ls usb/Galleries/ | sort --random-sort | head -n 1)")
 ```
 
-## Contab
+## Crontab
 
 Add this crontab to your pi user with `crontab -e`
 
