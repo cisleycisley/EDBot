@@ -3,4 +3,15 @@
 import sys
 from settings import *
 
-print(sys.argv[1])
+t = Twitter(
+    auth=OAuth(OAUTH_TOKEN, OAUTH_TOKEN_SECRET, CONSUMER_KEY, CONSUMER_SECRET))
+
+with open(sys.argv[1], "rb") as imagefile:
+    imagedata = imagefile.read()
+    
+t_upload = Twitter(domain='upload.twitter.com',
+    auth=OAuth(OAUTH_TOKEN, OAUTH_TOKEN_SECRET, CONSUMER_KEY, CONSUMER_SECRET))
+
+id_img1 = t_upload.media.upload(media=imagedata)["media_id_string"]
+
+t.statuses.update(media_ids=",".join([id_img1]))
