@@ -1,5 +1,6 @@
 import os
 from dotenv import load_dotenv
+from twitter import read_token_file
 load_dotenv()
 
 CONSUMER_KEY = os.getenv("TWITTER_CONSUMER_KEY")
