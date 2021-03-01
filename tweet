@@ -3,6 +3,8 @@
 import sys
 from settings import *
 
+from twitter import Twitter, Oauth
+
 t = Twitter(
     auth=OAuth(OAUTH_TOKEN, OAUTH_TOKEN_SECRET, CONSUMER_KEY, CONSUMER_SECRET))
 
